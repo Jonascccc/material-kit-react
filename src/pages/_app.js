@@ -8,6 +8,7 @@ import { AuthConsumer, AuthProvider } from 'src/contexts/auth-context';
 import { useNProgress } from 'src/hooks/use-nprogress';
 import { createTheme } from 'src/theme';
 import { createEmotionCache } from 'src/utils/create-emotion-cache';
+import { WebSocketProvider } from '../services/outputAPI';
 import 'simplebar-react/dist/simplebar.min.css';
 import '../components/NavBar.css';
 import '../components/HeroSection.css';
@@ -29,6 +30,7 @@ const App = (props) => {
 
   return (
     <CacheProvider value={emotionCache}>
+      <WebSocketProvider>
       <Head>
         <title>
           Devias Kit
@@ -52,6 +54,7 @@ const App = (props) => {
           </ThemeProvider>
         </AuthProvider>
       </LocalizationProvider>
+      </WebSocketProvider>
     </CacheProvider>
   );
 };
