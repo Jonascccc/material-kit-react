@@ -140,7 +140,7 @@ async def process_news(request: Request):
             # Convert string to Python dictionary or list
             news_list = json.loads(data_str)
             logger.info(news_list)
-
+            logger.info("yes")
             # Triggering the function
             analyzed_news_dict, Events_list = analysze_news(news_list['newsData'], Events_list)
 
